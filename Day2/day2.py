@@ -1,46 +1,50 @@
+# Day 2: Dive! 
+
 
 # Get data from file
-with open("Day2/day2.in") as fin:
+with open("day2.in") as fin:
     data = [i for i in fin.read().strip().split("\n")]
+
+# print(data)
 
 # Part 1
 def part1():
-    forwardPos = 0
-    depthPos = 0
+    horizontal = 0
+    depth = 0
 
     for instruction in data:
         command = instruction[:-2]
-        moveVar = int(instruction[-1])
+        move = int(instruction[-1])
 
         if command == 'forward':
-            forwardPos += moveVar
+            horizontal += move
         elif command == 'down':
-            depthPos += moveVar
+            depth += move
         elif command == 'up':
-            depthPos -= moveVar
+            depth -= move
 
-    return forwardPos * depthPos
+    return horizontal * depth
 
 
 # Part 2
 def part2():
-    forwardPos = 0
-    depthPos = 0
-    aimPos = 0
+    horizontal = 0
+    depth = 0
+    aim = 0
 
     for instruction in data:
         command = instruction[:-2]
-        moveVar = int(instruction[-1])
+        move = int(instruction[-1])
 
         if command == 'forward':
-            forwardPos += moveVar
-            depthPos += aimPos * moveVar
+            horizontal += move
+            depth += aim * move
         elif command == 'down':
-            aimPos += moveVar
+            aim += move
         elif command == 'up':
-            aimPos -= moveVar
+            aim -= move
 
-    return forwardPos * depthPos
+    return horizontal * depth
 
 print("Answer to part 1: ", part1())
 print("Answer to part 2: ", part2())
