@@ -2,7 +2,7 @@
 
 
 # Get data from file
-with open("day2.in") as fin:
+with open("Day2/day2.in") as fin:
     data = [i for i in fin.read().strip().split("\n")]
 
 # print(data)
