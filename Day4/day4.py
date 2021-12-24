@@ -1,9 +1,8 @@
-
 # Input handling
 with open('Day4/day4.in') as fin:
     numbers, *boards = fin.read().split('\n\n')
-    numbers = list(map(int, numbers.split(',')))
-    allBoards = [[[int(i) for i in x.split()] for x in r.split('\n') if x] for r in boards]
+    numbers = [int(i) for i in numbers.strip().split(',')]
+    allBoards = [[[int(col) for col in row.split()]for row in board.split('\n')] for board in boards]
 
 
 # Place an 'x' if a number in the board is called
