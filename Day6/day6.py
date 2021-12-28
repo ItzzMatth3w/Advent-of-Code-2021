@@ -17,9 +17,9 @@ def part1():
         
         # Check for fishes that have to reproduce
         for fish in range(0, len(allFish)):
-            if allFish[fish] == 0:
-                allFish[fish] = 7
-                allFish.append(9)
+            if allFish[fish] == 0:                          # If needs to reproduce
+                allFish[fish] = 7                               # Restart its reproduction cycle 
+                allFish.append(9)                               # Add the baby to the list
         
         # Decrease all fishes reproduction days by 1
         for fish in range(0, len(allFish)):
@@ -27,7 +27,7 @@ def part1():
 
         DAYS -= 1
 
-    return len(allFish)
+    return len(allFish)                                     # Find out total fish
 
 
 # Part 2:
@@ -58,6 +58,8 @@ def part2():
             fishMap = updatedFishMap                # Update the main list
         
     return(sum(fishMap.values()))
+
+
 
 print("Answer to part 1: ", part1())
 print("Answer to part 2: ", part2())
